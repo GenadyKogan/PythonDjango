@@ -20,5 +20,6 @@ from django.urls import path
 from django.contrib import admin
 
 urlpatterns = [
-     url(r'^$', views.index, name='index'),
+    url(r'^$', views.index, name='index'),
+    url(r'^contact/', views.contact, name='contact'),
 ]
