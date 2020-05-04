@@ -8,4 +8,13 @@ class Articles(models.Model):
     objects = models.Manager()
     #news_articles=models.TextField(default='')
     def __str__(self):
-        return self.title
+        return self.image
+    #def get_image(self,obj):
+        #return mark_safe(f'<img scr={obj.images.url} width="50" hight="60"')
+    def bit (self):
+        if self.image:
+            return u'<img src="%s" width="70"/>'% self.article_image.url
+        else:
+            return u'(none)'
+    
+    bit.allow_tags = True

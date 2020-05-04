@@ -1,8 +1,5 @@
 import tornado.web
 import tornado.ioloop
-
-
-
 class uploadImgHandler(tornado.web.RequestHandler):
     def post(self):
         files = self.request.files["fileImage"]
