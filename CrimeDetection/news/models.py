@@ -8,7 +8,7 @@ class Articles(models.Model):
     objects = models.Manager()
     #news_articles=models.TextField(default='')
     def __str__(self):
-        return self.image
+        return self.title
     #def get_image(self,obj):
         #return mark_safe(f'<img scr={obj.images.url} width="50" hight="60"')
     def bit (self):
