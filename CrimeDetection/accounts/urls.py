@@ -1,4 +1,3 @@
-from django.conf.urls import url, include
 """CrimeDetection URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,22 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
-from django.conf.urls import url, include
-from django.contrib import admin
-from . import settings
-from django.contrib.staticfiles.urls import static
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib.auth.views import LoginView
+from django.conf.urls import url,include
+from . import views
+#from django.contrib.auth.views import login
+
 urlpatterns = [
-    url('admin/', admin.site.urls),
-    url(r'^', include('mainApp.urls')),
-    url(r'^news/', include('news.urls')),
-    url(r'^login in', admin.site.urls),
-    url(r'^account/', include('accounts.urls')),
+    url(r'^$',views.home),
+    url('login/', LoginView.as_view(template_name='accounts/login.html'), name="login"),
 ]
-if settings.DEBUG:
-    urlpatterns += staticfiles_urlpatterns() + static(
-    settings.MEDIA_URL, document_root=settings.MEDIA_ROOT
-)
