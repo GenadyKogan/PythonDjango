@@ -20,5 +20,5 @@ from . import views
 
 urlpatterns = [
     url(r'^$',views.home),
-    url('login/', LoginView.as_view(template_name='accounts/login.html'), name="login"),
+    url('login/$', LoginView.as_view(template_name='accounts/login.html'), name="login"),
 ]

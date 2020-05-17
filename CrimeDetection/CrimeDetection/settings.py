@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'mainApp',
     'news',
     'accounts',
+    'uploadApp',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,5 +123,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+LOGIN_REDIRECT_URL='/account/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images/')
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'images/'),)
+

@@ -28,6 +28,9 @@ urlpatterns = [
     url(r'^news/', include('news.urls')),
     url(r'^login in', admin.site.urls),
     url(r'^account/', include('accounts.urls')),
+    # not working well
+    url('^upload/', include('uploadApp.urls')),
+    # not working well
 ]
 if settings.DEBUG:
     urlpatterns += staticfiles_urlpatterns() + static(
