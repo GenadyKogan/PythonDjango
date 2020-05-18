@@ -7,6 +7,7 @@
   {% if url %}
     <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
   {% endif %}-->
+
   {% load static %}
 <!DOCTYPE html>
 <html>
@@ -24,8 +25,8 @@
                 <div class="upload-console-body">
                     <h3>Select files from your computer</h3>
                     <from action="upload.php" method="post" ectype="multipart/form-data">
-                        <input type="file" name="files[]" id="standart-upload-files">
-                        <input tupe="submit" value="Upload files" id="standart-upload">
+                        <input type="file" name="files[]" id="standard-upload-files" multiple>
+                        <input tupe="submit" value="Upload files" id="standard-upload">
                     </from>
                     <h3>Or drag and drop files below</h3>
                     <div class="upload-console-drop" id="drop-zone">
@@ -44,8 +45,12 @@
                             <span>Success</span>
                         </div>-->
                     </div>
-
-        </div>
+                </div>
+        
     </div>
+    {% block content %}
+    <!--<script scr="{% static 'js/global.js' %}"></script>-->
+    <script src="{% static 'js/global.js' %}"></script>
+    {% endblock %}
 </body>
 </html>
