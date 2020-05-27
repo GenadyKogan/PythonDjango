@@ -1,0 +1,60 @@
+ <!-- <h2>Upload</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="document">
+    <button type="submit">Upload file</button>
+  </form>
+  {% if url %}
+    <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
+  {% endif %}-->
+
+  {% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+   
+    <title>Upload</title>
+  
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" type="text/css">
+    </head>
+    <body>
+    <div class="wrapper">
+        <div class="upload-console">  
+            <h2 class="upload-console-header">Upload</h2>
+                <div class="upload-console-body">
+                    <h3>Select files from your computer</h3>
+                    {% csrf_token %}
+                        <input type="file" name="files[]" id="standard-upload-files" multiple>
+                        <button type="button" onclick="return uploadFiles();" id="standard-upload-button">Upload Files</button>
+                    <h3>Or drag and drop files below</h3>
+                    <form method="post" id="drop-files" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="upload-console-drop" id="drop-zone">
+                            Just drag and drop files here
+                        </div>
+                    </form>
+                <div class="bar">
+                    <div class="bar-fill" id="bar-fill">
+                        <div class="bar-fill-text" id="bar-fill-text"></div>
+                    </div>
+                </div>
+                    <div id="uploads-finished">
+                        <h3>Processed files</h3>
+                       <!-- <div class="upload-console-upload" >
+                            <a href="#">filename.jpg</a>
+                            <span>Success</span>
+                        </div>-->
+                        <!--{% if url %}
+                            <p>Uploaded file: <a href="{{ url }}">{{ url }}</a></p>
+                        {% endif %}-->
+                    </div>
+                </div>
+    </div>
+    {% block content %}
+    <!--<script scr="{% static 'js/global.js' %}"></script>-->
+    <script src="{% static 'js/global.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% endblock %}
+    </body>
+</html>
