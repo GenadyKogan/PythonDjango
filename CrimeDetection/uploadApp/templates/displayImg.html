@@ -1,14 +1,6 @@
 {% load static %}
-
-{% block content %}
-    {% for val in values%}
-    <p>{{val}} </p>
-    {% endfor %}
-    
-
-    
+{% block content %}    
     {% for file in brands %}
         <img src="{% get_media_prefix %}{{ file }}" width="500px" />
     {% endfor %} 
-  
     {% endblock %}

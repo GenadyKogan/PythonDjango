@@ -4,7 +4,7 @@ from . import views
 
 
 urlpatterns = [
-  #url('', views.upload,name='upload'),
-  url('', views.uploadImg,name='uploadImg'),
+  url('upload/', views.upload,name='upload'),
+  url('display/', views.uploadImg,name='uploadImg'),
 ]
 
