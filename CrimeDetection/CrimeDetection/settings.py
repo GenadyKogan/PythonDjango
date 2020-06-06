@@ -124,6 +124,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL='/account/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images/')
+#MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images/')
 TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'images/'),)
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploadApp/static/media/image/') #'media/images/'
