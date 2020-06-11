@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <!-- <title>Заголовок страницы</title>-->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+<body>
+  <div class="jumbotron">
+    <div class="container">
+      <h1>{% include "mainApp/includes/some_html.html" %}</h1>
+      {% block content %}
+      {% endblock %}
+      <p>
+        <a href="/" class="btn btn-success btn-lg">Home page</a>
+        <a href="/news" class="btn btn-primary btn-lg">News</a>
+        <a href="/contact" class="btn btn-info btn-lg">Contact</a>
+       <a href="/login in/admin" class="btn btn-info btn-lg">Administration</a>
+        <a href="/account/login" class="btn btn-info btn-lg">Log in</a>
+      </p>
+    </div>
+  </div>
+  <div class="container">
+   <img src="{% static 'mainApp/image/e75.jpg' %}" class="img-thumbnail">
+    <hr>
+    &copy;  All rights reversed by G.K.
+  </div>
+</body>
+</html>
