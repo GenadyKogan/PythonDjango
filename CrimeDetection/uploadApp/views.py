@@ -14,10 +14,13 @@ from flask import Flask, request, render_template, send_from_directory
 def upload(request):
     context = {}
     if request.method=='POST':
+        username = request.user.username
+        #userID=request.POST.get("user")
+        print(username)
         imagestr = request.body
         image = ContentFile(imagestr)
         image_name = request.headers.get("filename")
-        fs=FileSystemStorage()
+        fs=FileSystemStorage("uploadApp/static/media/image/"+username)
         name=fs.save(image_name,image)
         url=fs.url(name)
         context['url']=fs.url(name)
@@ -26,10 +29,12 @@ def upload(request):
 
 
 def uploadImg(request):
+    username = request.user.username
     image_list=[]
-    for root, dirs, files in os.walk(settings.MEDIA_ROOT):
+    
+    for root, dirs, files in os.walk(settings.MEDIA_ROOT+username):
         for file in files:
-            image_list.append(file)
+            image_list.append(os.path.join(root, file))
     return render(request, 'displayImg.html',{'brands': image_list})
 
 
