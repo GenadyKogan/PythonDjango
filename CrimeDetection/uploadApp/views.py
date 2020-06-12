@@ -8,7 +8,7 @@ from base64 import decodestring
 import os
 
 from django.conf import settings
-from flask import Flask, request, render_template, send_from_directory
+
 
 # Create your views here.
 def upload(request):
