@@ -15,7 +15,6 @@ def upload(request):
     context = {}
     if request.method=='POST':
         username = request.user.username
-        #userID=request.POST.get("user")
         print(username)
         imagestr = request.body
         image = ContentFile(imagestr)
