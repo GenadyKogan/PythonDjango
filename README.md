@@ -38,8 +38,9 @@ k.set_contents_from_file(resized_photo)
 
 ## Change path for saving images
 
-Go to:E:uploadApp --> views.py
+Go to: uploadApp --> views.py
 
+'''views.py'''
 ```python 
 def upload(request):
     context = {}
