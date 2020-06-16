@@ -25,7 +25,7 @@ You can get an existing bucket using:
 
 After installing boto, this code should do what you need to do:
 
-```
+```python
 from boto.s3.connection import S3Connection
 from boto.s3.key import Key
 
@@ -36,7 +36,11 @@ k.key = 'file_path_on_s3' # for example, 'images/bob/resized_image1.png'
 k.set_contents_from_file(resized_photo)
 ```
 
-```python
+## Change path for saving images
+
+Go to:E:uploadApp --> views.py
+
+```python 
 def upload(request):
     context = {}
     if request.method=='POST':
@@ -45,12 +49,10 @@ def upload(request):
         imagestr = request.body
         image = ContentFile(imagestr)
         image_name = request.headers.get("filename")
-        fs=FileSystemStorage("uploadApp/static/media/image/"+username) #you can change this path for save images 
+        fs=FileSystemStorage("uploadApp/static/media/image/"+username) #you can change this path for saving images 
         name=fs.save(image_name,image)
         url=fs.url(name)
         context['url']=fs.url(name)
     return render(request, 'upload.html',context)
-    
-
 ```
 
