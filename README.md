@@ -35,3 +35,22 @@ k = Key(bucket)
 k.key = 'file_path_on_s3' # for example, 'images/bob/resized_image1.png'
 k.set_contents_from_file(resized_photo)
 ```
+
+```python
+def upload(request):
+    context = {}
+    if request.method=='POST':
+        username = request.user.username
+        print(username)
+        imagestr = request.body
+        image = ContentFile(imagestr)
+        image_name = request.headers.get("filename")
+        fs=FileSystemStorage("uploadApp/static/media/image/"+username) #you can change this path for save images 
+        name=fs.save(image_name,image)
+        url=fs.url(name)
+        context['url']=fs.url(name)
+    return render(request, 'upload.html',context)
+    
+
+```
+
