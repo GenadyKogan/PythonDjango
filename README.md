@@ -9,3 +9,4 @@ Change directory to the cloned repo
 cd pusher_django_photo_feed
 Install required libraries: i.e pusher and django
 pip install django pusher
+aaa
