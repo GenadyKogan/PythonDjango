@@ -3,7 +3,8 @@
 1. Clone this repository
 2. pip install -U Pillow
 3. Change directory - cd CrimeDetection
-      --Please make sure if you have manage.py in this folder. You can check it using ```tree``` command.
+      
+      Please make sure if you have manage.py in this folder. You can check it using ```tree``` command.
 4. run python manage.py runserver
       
 ## Upload Images to Amazon S3 using Django
