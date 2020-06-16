@@ -2,12 +2,17 @@
 ```
 Getting Started
 ```
-Clone this repository by running:
-git clone https://github.com/samuelayo/pusher_django_photo_feed.git
-Change directory to the cloned repo
-cd pusher_django_photo_feed
-Install required libraries: i.e pusher and django
-pip install django pusher
-
-
 ## Installation
+1. Clone this repository
+2. pip install -U Pillow
+3. Change directory - cd CrimeDetection
+4. run python manage.py runserver
+## Upload Images to Amazon S3 using Django
+
+    # Here is a diagram:
+```
+djangobucket  ------------> bob ---------> picture1.jpg
+                                           picture2.jpg
+                                           picture3.jpg
+                                           picture4.jpg
+```                                           
