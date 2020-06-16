@@ -40,7 +40,7 @@ k.set_contents_from_file(resized_photo)
 
 Go to: uploadApp --> views.py
 
-'''views.py'''
+```views.py```
 ```python 
 def upload(request):
     context = {}
